@@ -16,7 +16,7 @@ jobs:
       - name: Print the Variable
         env:
           MY_VAR: "🟡 Step Level Value"
-        run: echo "MY_VAR is $MY_VAR" # What do we print?
+        run: MY_VAR="ha ha" echo "MY_VAR is $MY_VAR" # What do we print?
 
       - name: Print the Variable again
         run: echo "MY_VAR is $MY_VAR" # And here?
