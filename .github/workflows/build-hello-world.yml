@@ -20,6 +20,9 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Cat
+        run: cat "$GITHUB_ENV"
+
       - name: Run mvn
         run: mvn clean install
         working-directory: hello-world
