@@ -24,7 +24,14 @@ jobs:
         run: mvn clean install
         working-directory: hello-world
 
+      - name: Upload file
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: le-jar
+          path: target/hello-world-1.0-SNAPSHOT.jar
+
       - name: Publish package
         run: mvn --batch-mode deploy
+        working-directory: hello-world
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
