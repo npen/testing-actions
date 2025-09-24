@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - hello-world
+      - .github/workflows/build-hello-world.yml
 
 jobs:
   build:
@@ -21,4 +24,7 @@ jobs:
         run: mvn clean install
         working-directory: hello-world
 
-
+      - name: Publish package
+        run: mvn --batch-mode deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
