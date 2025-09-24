@@ -18,6 +18,7 @@ jobs:
       # ENV Vars
       - name: Set the value in env vars
         run: echo "action_state=yellow" >> $GITHUB_ENV
+      - name: Youhou
         run: echo "hello=${{ steps.sets-a-secret.outputs.secret-number }}" >> $GITHUB_ENV
       - name: Use the value from env vars
         run: printf '%s\n' "$action_state" # This will output 'yellow'
