@@ -1,0 +1,12 @@
+name: Greet
+on:
+  issues:
+    types:
+      - opened
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo issuer
+        run: echo Welcome ${GITHUB_ACTOR}
+        
